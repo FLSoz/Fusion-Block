@@ -169,7 +169,7 @@ namespace FusionBlock
 
                     hecku = tankA.transform.rotation; // Yeah that's right get shunned
                     tankB.transform.rotation = tankA.transform.rotation;  // They are supposed to be in the same direction anyways so this should be fine
-                    tankB.transform.position += transform.position - other.transform.position - (transform.TransformDirection(JoinOffset)); // Move the tech by the offset of the two blocks, and join offset
+                    tankB.transform.position += transform.position - other.transform.position + (transform.TransformDirection(JoinOffset)); // Move the tech by the offset of the two blocks, and join offset
 
                     tankB.blockman.Disintegrate(false, false); // Melt that bad boy
                     if (MakeSubstitiute) // Does this have a block to go between or is this one of those glue kinds of fusing 
