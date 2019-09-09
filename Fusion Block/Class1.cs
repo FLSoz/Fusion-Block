@@ -176,6 +176,7 @@ namespace FusionBlock
                     {
                         TankBlock mergedBlock = ManSpawn.inst.SpawnBlock(SubstituteType, Vector3.zero, Quaternion.identity); // Create that substitute
                         mergedBlock.SetSkinIndex(block.GetSkinIndex()); // Set that skin so it is pretty
+                        mergedBlock.visible.damageable.InitHealth(block.visible.damageable.Health + other.block.visible.damageable.Health); // Set the health to both of the halves
                         tankA.blockman.AddBlockToTech(mergedBlock, cachedMergePos, cachedMergeRot); // Put that block where it belongs
                     }
 
