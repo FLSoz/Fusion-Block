@@ -118,14 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="fusionblock_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\fusionblock_png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="fusionblock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fusionblock._png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="fusionbolt_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\fusionbolt_png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="fusionbolt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fusionbolt._png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="fusionplate_png" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\fusionplate_png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="fusionplate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fusionplate._png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="Fusion_Block" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Fusion Block.obj;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
@@ -135,5 +135,77 @@
   </data>
   <data name="Fusion_Plate" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\fusion plate.obj;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ionicbolt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ionicbolt._png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="ionicboltopen" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ionicboltopen._png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="Ionic_Bolt" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ionic Bolt.obj;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="Ionic_Bolt_Open" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ionic Bolt Open.obj;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ReactorBlastBlock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReactorBlastBlock.obj;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ReactorBlastBlockPassive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReactorBlastBlockPassive.obj;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ReactorCellPassive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReactorCellPassive.obj;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ReactorCooler" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReactorCooler.obj;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ReactorCoolerFan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReactorCoolerFan.obj;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ReactorLoaderPassive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReactorLoaderPassive.obj;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ReactorRingIV" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReactorRingIV.obj;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ReactorRingIVJet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReactorRingIVJet.obj;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ReactorRingX" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReactorRingX.obj;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="ReactorRingXJet" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReactorRingXJet.obj;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;Windows-1252</value>
+  </data>
+  <data name="reactor_blast_block" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reactor_blast_block._png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="reactor_blast_block_passive" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reactor_blast_block_passive._png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="reactor_cell" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reactor_cell._png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="reactor_cooler" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reactor_cooler._png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="reactor_loader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reactor_loader._png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="reactor_ring_iv" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reactor_ring_iv._png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="reactor_ring_x" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reactor_ring_x._png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="reactor_tex_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reactor_tex_1._png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="reactor_tex_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reactor_tex_2._png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="reactor_tex_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\reactor_tex_3._png;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

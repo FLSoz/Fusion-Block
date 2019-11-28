@@ -140,9 +140,9 @@ namespace FusionBlock.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] fusionblock_png {
+        internal static byte[] fusionblock {
             get {
-                object obj = ResourceManager.GetObject("fusionblock_png", resourceCulture);
+                object obj = ResourceManager.GetObject("fusionblock", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -150,9 +150,9 @@ namespace FusionBlock.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] fusionbolt_png {
+        internal static byte[] fusionbolt {
             get {
-                object obj = ResourceManager.GetObject("fusionbolt_png", resourceCulture);
+                object obj = ResourceManager.GetObject("fusionbolt", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -160,10 +160,432 @@ namespace FusionBlock.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        internal static byte[] fusionplate_png {
+        internal static byte[] fusionplate {
             get {
-                object obj = ResourceManager.GetObject("fusionplate_png", resourceCulture);
+                object obj = ResourceManager.GetObject("fusionplate", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Blender v2.80 (sub 74) OBJ File: &apos;BF_Ionic_Bolt.blend&apos;
+        ///# www.blender.org
+        ///mtllib Ionic Bolt.mtl
+        ///o BF_Ionic_Bolt
+        ///v -0.132046 -0.499999 -0.132000
+        ///v -0.003258 -0.499999 -0.433271
+        ///v -0.112278 -0.499999 -0.418918
+        ///v -0.181400 -0.499999 -0.384348
+        ///v -0.234009 -0.499999 -0.388020
+        ///v -0.264873 -0.499999 -0.374635
+        ///v -0.327005 -0.499999 -0.326960
+        ///v -0.374680 -0.499999 -0.264828
+        ///v -0.388065 -0.499999 -0.233964
+        ///v -0.384393 -0.499999 -0.181354
+        ///v -0.105807 -0.449999 -0.394770
+        ///v -0.171914 -0.449999 -0.361449
+        ///v -0.235553 -0. [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Ionic_Bolt {
+            get {
+                return ResourceManager.GetString("Ionic_Bolt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Blender v2.80 (sub 74) OBJ File: &apos;BF_Ionic_Bolt.blend&apos;
+        ///# www.blender.org
+        ///mtllib Ionic Bolt Open.mtl
+        ///o BF_Ionic_Bolt.002
+        ///v -0.132046 -0.499999 -0.132000
+        ///v 0.000000 -0.599997 -0.000000
+        ///v -0.132046 -0.499999 -0.000000
+        ///v 0.000000 -0.499999 -0.132000
+        ///v 0.000000 -0.499999 -0.000000
+        ///v -0.092928 -0.405924 -0.346703
+        ///v 0.000000 -0.449999 -0.379994
+        ///v -0.098378 -0.449999 -0.367046
+        ///v -0.206152 -0.240743 -0.118986
+        ///v -0.274030 -0.291756 -0.073398
+        ///v -0.229930 -0.240743 -0.061581
+        ///v -0.155277 -0.173204 -0.041578
+        ///v -0.14029 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string Ionic_Bolt_Open {
+            get {
+                return ResourceManager.GetString("Ionic_Bolt_Open", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ionicbolt {
+            get {
+                object obj = ResourceManager.GetObject("ionicbolt", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] ionicboltopen {
+            get {
+                object obj = ResourceManager.GetObject("ionicboltopen", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] reactor_blast_block {
+            get {
+                object obj = ResourceManager.GetObject("reactor_blast_block", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] reactor_blast_block_passive {
+            get {
+                object obj = ResourceManager.GetObject("reactor_blast_block_passive", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] reactor_cell {
+            get {
+                object obj = ResourceManager.GetObject("reactor_cell", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] reactor_cooler {
+            get {
+                object obj = ResourceManager.GetObject("reactor_cooler", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] reactor_loader {
+            get {
+                object obj = ResourceManager.GetObject("reactor_loader", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] reactor_ring_iv {
+            get {
+                object obj = ResourceManager.GetObject("reactor_ring_iv", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] reactor_ring_x {
+            get {
+                object obj = ResourceManager.GetObject("reactor_ring_x", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] reactor_tex_1 {
+            get {
+                object obj = ResourceManager.GetObject("reactor_tex_1", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] reactor_tex_2 {
+            get {
+                object obj = ResourceManager.GetObject("reactor_tex_2", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] reactor_tex_3 {
+            get {
+                object obj = ResourceManager.GetObject("reactor_tex_3", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Blender v2.80 (sub 74) OBJ File: &apos;FusionReactors.blend&apos;
+        ///# www.blender.org
+        ///mtllib ReactorBlastBlockPassive.mtl
+        ///o Cube.002_Cube.003
+        ///v -0.325000 -0.500000 0.500000
+        ///v -0.500000 -0.325000 0.500000
+        ///v -0.500000 -0.500000 0.325000
+        ///v -0.325000 0.500000 0.500000
+        ///v -0.500000 0.500000 0.325000
+        ///v -0.500000 0.325000 0.500000
+        ///v -0.500000 -0.500000 -0.325000
+        ///v -0.500000 -0.325000 -0.500000
+        ///v -0.325000 -0.500000 -0.500000
+        ///v -0.325000 0.500000 -0.500000
+        ///v -0.500000 0.325000 -0.500000
+        ///v -0.500000 0.500000 -0.325000
+        ///v 0.5000 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReactorBlastBlock {
+            get {
+                return ResourceManager.GetString("ReactorBlastBlock", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Blender v2.80 (sub 74) OBJ File: &apos;FusionReactors.blend&apos;
+        ///# www.blender.org
+        ///mtllib ReactorBlastBlock.mtl
+        ///o Cube
+        ///v -0.325000 -0.500000 0.500000
+        ///v -0.500000 -0.325000 0.500000
+        ///v -0.500000 -0.500000 0.325000
+        ///v -0.325000 0.500000 0.500000
+        ///v -0.500000 0.500000 0.325000
+        ///v -0.500000 0.325000 0.500000
+        ///v -0.500000 -0.500000 -0.325000
+        ///v -0.500000 -0.325000 -0.500000
+        ///v -0.325000 -0.500000 -0.500000
+        ///v -0.325000 0.500000 -0.500000
+        ///v -0.500000 0.325000 -0.500000
+        ///v -0.500000 0.500000 -0.325000
+        ///v 0.500000 -0.500000 0.32500 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReactorBlastBlockPassive {
+            get {
+                return ResourceManager.GetString("ReactorBlastBlockPassive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Blender v2.80 (sub 74) OBJ File: &apos;FusionReactors.blend&apos;
+        ///# www.blender.org
+        ///mtllib ReactorCellPassive.mtl
+        ///o Cube.005_Cube.002
+        ///v -0.325000 -0.500000 0.500000
+        ///v -0.501315 -0.322517 0.501315
+        ///v -0.325000 1.500000 0.500000
+        ///v -0.500000 1.500000 0.325000
+        ///v -0.501315 1.322517 0.501315
+        ///v -0.501315 -0.322517 -0.501315
+        ///v -0.325000 -0.500000 -0.500000
+        ///v -0.325000 1.500000 -0.500000
+        ///v -0.501315 1.322517 -0.501315
+        ///v -0.500000 1.500000 -0.325000
+        ///v 0.501315 -0.322517 0.501315
+        ///v 0.501315 1.322517 0.501315
+        ///v 0.500000 1.50000 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReactorCellPassive {
+            get {
+                return ResourceManager.GetString("ReactorCellPassive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Blender v2.80 (sub 74) OBJ File: &apos;FusionReactors.blend&apos;
+        ///# www.blender.org
+        ///mtllib ReactorCooler.mtl
+        ///o Cube.003_Cube.004
+        ///v -0.325000 -0.500000 0.500000
+        ///v -0.500000 -0.325000 0.500000
+        ///v -0.500000 -0.500000 0.325000
+        ///v -0.325000 -0.400000 0.500000
+        ///v -0.500000 -0.400000 0.325000
+        ///v -0.500000 -0.120000 0.500000
+        ///v -0.500000 -0.500000 -0.325000
+        ///v -0.500000 -0.325000 -0.500000
+        ///v -0.325000 -0.500000 -0.500000
+        ///v -0.325000 -0.400000 -0.500000
+        ///v -0.500000 -0.120000 -0.500000
+        ///v -0.500000 -0.400000 -0.325000
+        ///v 0.500000 -0 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReactorCooler {
+            get {
+                return ResourceManager.GetString("ReactorCooler", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Blender v2.80 (sub 74) OBJ File: &apos;FusionReactors.blend&apos;
+        ///# www.blender.org
+        ///mtllib ReactorCoolerFan.mtl
+        ///o Cylinder_Cylinder.047
+        ///v -0.000078 -0.245000 -0.390135
+        ///v -0.000078 -0.195000 -0.390135
+        ///v 0.194922 -0.295000 -0.337885
+        ///v 0.194922 -0.245000 -0.337885
+        ///v 0.337672 -0.245000 -0.195135
+        ///v 0.337672 -0.195000 -0.195135
+        ///v 0.389922 -0.295000 -0.000135
+        ///v 0.389922 -0.245000 -0.000135
+        ///v 0.337672 -0.245000 0.194865
+        ///v 0.337672 -0.195000 0.194865
+        ///v 0.194922 -0.295000 0.337615
+        ///v 0.194922 -0.245000 0.337615
+        ///v -0.000078 -0 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReactorCoolerFan {
+            get {
+                return ResourceManager.GetString("ReactorCoolerFan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Blender v2.80 (sub 74) OBJ File: &apos;FusionReactors.blend&apos;
+        ///# www.blender.org
+        ///mtllib ReactorLoaderPassive.mtl
+        ///o Cube.006_Cube.007
+        ///v -0.325000 -0.500000 0.500000
+        ///v -0.500000 -0.325000 0.500000
+        ///v -0.500000 -0.500000 0.325000
+        ///v -0.500000 -0.500000 -0.325000
+        ///v -0.500000 -0.325000 -0.500000
+        ///v -0.325000 -0.500000 -0.500000
+        ///v 0.500000 -0.500000 0.325000
+        ///v 0.500000 -0.325000 0.500000
+        ///v 0.325000 -0.500000 0.500000
+        ///v 0.325000 -0.500000 -0.500000
+        ///v 0.500000 -0.325000 -0.500000
+        ///v 0.500000 -0.500000 -0.325000
+        ///v 0.500000 - [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReactorLoaderPassive {
+            get {
+                return ResourceManager.GetString("ReactorLoaderPassive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Blender v2.80 (sub 74) OBJ File: &apos;FusionReactors.blend&apos;
+        ///# www.blender.org
+        ///mtllib ReactorRingIV.mtl
+        ///o Cube.001
+        ///v 0.876512 -0.500000 2.500602
+        ///v 0.701512 -0.325000 2.500602
+        ///v 0.876512 0.500000 2.500602
+        ///v 0.701512 0.325000 2.500602
+        ///v 0.311657 -0.500000 2.339118
+        ///v 0.149978 -0.325000 2.272149
+        ///v 0.149978 0.325000 2.272149
+        ///v 0.311657 0.500000 2.339118
+        ///v -0.272148 -0.325000 1.850023
+        ///v -0.148404 -0.500000 1.973766
+        ///v -0.148404 0.500000 1.973766
+        ///v -0.272148 0.325000 1.850023
+        ///v -0.433632 -0.500000 1.460167
+        ///v -0.500601 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReactorRingIV {
+            get {
+                return ResourceManager.GetString("ReactorRingIV", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Blender v2.80 (sub 74) OBJ File: &apos;FusionReactors.blend&apos;
+        ///# www.blender.org
+        ///mtllib ReactorRingIVJet.mtl
+        ///o Cylinder.002_Cylinder.000
+        ///v 0.000000 0.000000 0.000000
+        ///v 0.000000 -0.700000 -1.000000
+        ///v 0.000000 0.800000 -1.000000
+        ///v 0.500000 -0.800000 -0.866025
+        ///v 0.500000 0.700000 -0.866025
+        ///v 0.866025 -0.700000 -0.500000
+        ///v 0.866025 0.800000 -0.500000
+        ///v 1.000000 -0.800000 0.000000
+        ///v 1.000000 0.700000 0.000000
+        ///v 0.866025 -0.700000 0.500000
+        ///v 0.866025 0.800000 0.500000
+        ///v 0.500000 -0.800000 0.866025
+        ///v 0.500000 0.700000  [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReactorRingIVJet {
+            get {
+                return ResourceManager.GetString("ReactorRingIVJet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Blender v2.80 (sub 74) OBJ File: &apos;FusionReactors.blend&apos;
+        ///# www.blender.org
+        ///mtllib ReactorRingX.mtl
+        ///o Cube.004_Cube.009
+        ///v 0.876512 -0.500000 2.500602
+        ///v 0.701512 -0.325000 2.500602
+        ///v 0.876512 1.500000 2.500602
+        ///v 0.701512 1.325000 2.500602
+        ///v 0.311657 -0.500000 2.339118
+        ///v 0.149978 -0.325000 2.272149
+        ///v 0.149978 1.325000 2.272149
+        ///v 0.311657 1.500000 2.339118
+        ///v -0.272148 -0.325000 1.850023
+        ///v -0.148404 -0.500000 1.973766
+        ///v -0.148404 1.500000 1.973766
+        ///v -0.272148 1.325000 1.850023
+        ///v -0.433632 -0.500000 1.460167
+        ///v - [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReactorRingX {
+            get {
+                return ResourceManager.GetString("ReactorRingX", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Blender v2.80 (sub 74) OBJ File: &apos;FusionReactors.blend&apos;
+        ///# www.blender.org
+        ///mtllib ReactorRingXJet.mtl
+        ///o Cylinder.001_Cylinder.002
+        ///v 0.000000 0.000000 0.000000
+        ///v 0.000000 -0.700000 -1.000000
+        ///v 0.000000 1.800000 -1.000000
+        ///v 0.500000 -0.800000 -0.866025
+        ///v 0.500000 1.700000 -0.866025
+        ///v 0.866025 -0.700000 -0.500000
+        ///v 0.866025 1.800000 -0.500000
+        ///v 1.000000 -0.800000 0.000000
+        ///v 1.000000 1.700000 0.000000
+        ///v 0.866025 -0.700000 0.500000
+        ///v 0.866025 1.800000 0.500000
+        ///v 0.500000 -0.800000 0.866025
+        ///v 0.500000 1.700000 0 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReactorRingXJet {
+            get {
+                return ResourceManager.GetString("ReactorRingXJet", resourceCulture);
             }
         }
     }
