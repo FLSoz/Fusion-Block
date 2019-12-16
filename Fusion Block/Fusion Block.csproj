@@ -116,23 +116,24 @@
     <None Include="Resources\ReactorCellPassive.obj" />
     <None Include="Resources\ReactorCooler.obj" />
     <None Include="Resources\ReactorCoolerFan.obj" />
+    <None Include="Resources\ReactorGauge.obj" />
+    <None Include="Resources\ReactorGaugeBar.obj" />
     <None Include="Resources\ReactorLoaderPassive.obj" />
     <None Include="Resources\ReactorRingIV.obj" />
     <None Include="Resources\ReactorRingIVJet.obj" />
-    <None Include="Resources\ReactorRingJet.obj" />
     <None Include="Resources\ReactorRingX.obj" />
     <None Include="Resources\ReactorRingXJet.obj" />
     <None Include="Resources\reactor_blast_block._png" />
     <None Include="Resources\reactor_blast_block_passive._png" />
     <None Include="Resources\reactor_cell._png" />
     <None Include="Resources\reactor_cooler._png" />
+    <None Include="Resources\reactor_gauge._png" />
     <None Include="Resources\reactor_loader._png" />
     <None Include="Resources\reactor_ring_iv._png" />
     <None Include="Resources\reactor_ring_x._png" />
     <None Include="Resources\reactor_tex_1._png" />
     <None Include="Resources\reactor_tex_2._png" />
     <None Include="Resources\reactor_tex_3._png" />
-    <None Include="Resources\reactor_tex_3_png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -235,7 +235,7 @@ namespace FusionBlock
                 moduleEnergy.JetCapsule1 = new Vector3(1f, 0.2f, 1f);
                 moduleEnergy.JetCapsule2 = new Vector3(1f, -0.2f, 1f);
                 moduleEnergy.JetCapsuleRad = 1f;
-                moduleEnergy.JetCapsuleDamage = 32f;
+                moduleEnergy.JetCapsuleDamage = 45f;
                 Component.DestroyImmediate(ringIV.Prefab.GetComponentInChildren<EnergyGauge>());
                 var power = ringIV.Prefab.GetComponent<ModuleEnergyStore>();
                 power.m_Capacity = 400;
@@ -251,7 +251,7 @@ namespace FusionBlock
                 {
                     var m = particle.main;
                     m.startSpeedMultiplier *= 2f;
-                    m.startSizeMultiplier *= 1.7f;
+                    m.startSizeMultiplier *= 3f;
                     m.startColor = rf_ExplosionColor;
                 }
 
@@ -306,7 +306,7 @@ namespace FusionBlock
                 moduleReactor.JetCapsule1 = new Vector3(1f, 1.2f, 1f);
                 moduleReactor.JetCapsule2 = new Vector3(1f, -0.2f, 1f);
                 moduleReactor.JetCapsuleRad = 1f;
-                moduleReactor.JetCapsuleDamage = 40f;
+                moduleReactor.JetCapsuleDamage = 60f;
                 Component.DestroyImmediate(ringX.Prefab.GetComponentInChildren<EnergyGauge>());
                 var power = ringX.Prefab.GetComponent<ModuleEnergyStore>();
                 power.m_Capacity = 1000;
@@ -322,7 +322,7 @@ namespace FusionBlock
                 {
                     var m = particle.main;
                     m.startSpeedMultiplier *= 3f;
-                    m.startSizeMultiplier *= 2.4f;
+                    m.startSizeMultiplier *= 4f;
                     m.startColor = rf_ExplosionColor;
                 }
 

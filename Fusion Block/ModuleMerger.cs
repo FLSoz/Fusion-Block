@@ -34,6 +34,14 @@ namespace FusionBlock
             void OnSpawn()
             {
                 Detonated = false;
+                blockA = null;
+                blockB = null;
+                cachedBlockAOffset = Vector3.zero;
+                cachedBlockBOffset = Vector3.zero;
+                cachedWorldPos = Vector3.zero;
+                cachedSplitRot = OrthoRotation.identity;
+                cachedWorldRot = Quaternion.identity;
+
             }
 
             void OnAttach()
@@ -128,7 +136,7 @@ namespace FusionBlock
                     foreach (TankBlock sb in array) // Iterate from the array back up there from that tech, but now on this tech
                     {
                         // Add the block, using the block's rotation from memory, and just use the block's positions
-                        if (!tankA.blockman.AddBlockToTech(sb, block.cachedLocalPosition + sb.cachedLocalPosition - other.block.cachedLocalPosition, sb.cachedLocalRotation)) /*new IntVector3(tankA.transform.InverseTransformPoint(sb.transform.position))*/
+                        if (!tankA.blockman.AddBlockToTech(sb, block.cachedLocalPosition + sb.cachedLocalPosition - other.block.cachedLocalPosition + block.cachedLocalRotation * JoinOffset, sb.cachedLocalRotation)) /*new IntVector3(tankA.transform.InverseTransformPoint(sb.transform.position))*/
                             retry.Add(sb); // If it didn't attach, try again after
                     }
 
@@ -140,7 +148,7 @@ namespace FusionBlock
                         while (retry.Count > iter) // Go through the elements
                         {
                             var sb = retry[iter];
-                            if (!tankA.blockman.AddBlockToTech(sb, block.cachedLocalPosition + sb.cachedLocalPosition - other.block.cachedLocalPosition, sb.cachedLocalRotation))
+                            if (!tankA.blockman.AddBlockToTech(sb, block.cachedLocalPosition + sb.cachedLocalPosition - other.block.cachedLocalPosition + block.cachedLocalRotation * JoinOffset, sb.cachedLocalRotation))
                                 iter++; // Skip
                             else
                                 retry.RemoveAt(iter); // Move elements down, keep placement
@@ -159,7 +167,7 @@ namespace FusionBlock
             }
 
             TankBlock blockA, blockB;
-            Vector3 cachedSplitPos, cachedWorldPos;
+            Vector3 cachedBlockAOffset, cachedBlockBOffset, cachedWorldPos;
             OrthoRotation cachedSplitRot;
             Quaternion cachedWorldRot;
             bool Detonated;
@@ -171,12 +179,17 @@ namespace FusionBlock
                     base.block.tank.beam.EnableBeam(false, false, false);
                 }
                 blockA = block.ConnectedBlocksByAP[0]; blockB = block.ConnectedBlocksByAP[1];
+                cachedWorldPos = block.trans.position;
+                cachedSplitRot = block.cachedLocalRotation; cachedWorldRot = block.trans.rotation;
+                if (blockA != null)
+                    cachedBlockAOffset = block.cachedLocalPosition - blockA.cachedLocalPosition;
+                if (blockB != null)
+                    cachedBlockBOffset = block.cachedLocalPosition - blockB.cachedLocalPosition;
+
                 if (blockB == null)
                     blockA.AttachEvent.Subscribe(AfterDetonate);
                 else
                     blockB.AttachEvent.Subscribe(AfterDetonate);
-                cachedSplitPos = block.cachedLocalPosition; cachedWorldPos = block.trans.position;
-                cachedSplitRot = block.cachedLocalRotation; cachedWorldRot = block.trans.rotation;
                 Singleton.Manager<ManLooseBlocks>.inst.HostDetachBlock(base.block, false, true);
                 block.damage.Explode(false); // Explode this
                 Detonated = true;
@@ -184,8 +197,12 @@ namespace FusionBlock
 
             private void AfterDetonate()
             {
+                if (!Detonated)
+                {
+                    Console.WriteLine("FusionBlock.ModuleMerger.AfterDetonate() has been called more than once!");
+                }
                 Detonated = false;
-                transform.position += Vector3.up * 100f;
+
                 if (blockB == null)
                     blockA.AttachEvent.Unsubscribe(AfterDetonate);
                 else
@@ -201,9 +218,9 @@ namespace FusionBlock
                 block.visible.RemoveFromGame(); // Rid of this
 
                 if (blockA != null && blockA.tank != null)
-                    blockA.tank.blockman.AddBlockToTech(halfBlockA, cachedSplitPos, cachedSplitRot); // Put that block where it belongs
+                    blockA.tank.blockman.AddBlockToTech(halfBlockA, blockA.cachedLocalPosition + cachedBlockAOffset, cachedSplitRot); // Put that block where it belongs
                 if (blockB != null && blockB.tank != null)
-                    blockB.tank.blockman.AddBlockToTech(halfBlockB, cachedSplitPos, new OrthoRotation(cachedSplitRot * Quaternion.Euler(180, 0, 0))); // Put that other block where it belongs
+                    blockB.tank.blockman.AddBlockToTech(halfBlockB, blockB.cachedLocalPosition + cachedBlockBOffset, new OrthoRotation(cachedSplitRot * Quaternion.Euler(180, 0, 0))); // Put that other block where it belongs
             }
 
             static List<TankBlock> GetSafeBlockStep(TankBlock StartBlock)

@@ -280,6 +280,16 @@ namespace FusionBlock.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] reactor_gauge {
+            get {
+                object obj = ResourceManager.GetObject("reactor_gauge", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] reactor_loader {
             get {
                 object obj = ResourceManager.GetObject("reactor_loader", resourceCulture);
@@ -459,6 +469,56 @@ namespace FusionBlock.Properties {
         internal static string ReactorCoolerFan {
             get {
                 return ResourceManager.GetString("ReactorCoolerFan", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Blender v2.80 (sub 74) OBJ File: &apos;FusionReactors.blend&apos;
+        ///# www.blender.org
+        ///mtllib ReactorGauge.mtl
+        ///o Cube.006
+        ///v 0.145285 -0.500000 0.500000
+        ///v -0.031029 -0.322517 0.501315
+        ///v -0.031029 -0.322517 -0.501315
+        ///v 0.145285 -0.500000 -0.500000
+        ///v 0.501315 -0.322517 0.501315
+        ///v 0.501315 -0.322517 -0.501315
+        ///v 0.500000 -0.500000 -0.325000
+        ///v -0.028288 -0.226945 0.323573
+        ///v -0.029715 -0.345000 0.224250
+        ///v -0.029715 -0.345000 -0.224250
+        ///v -0.028288 -0.226945 -0.323573
+        ///v 0.146712 -0.226945 -0.498573
+        ///v 0.323573 -0.226945 -0.4985 [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReactorGauge {
+            get {
+                return ResourceManager.GetString("ReactorGauge", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to # Blender v2.80 (sub 74) OBJ File: &apos;FusionReactors.blend&apos;
+        ///# www.blender.org
+        ///mtllib ReactorGaugeBar.mtl
+        ///o Cube.014_Cube.029
+        ///v 0.149437 -0.120000 0.370564
+        ///v 0.149437 -0.120000 -0.370564
+        ///v 0.149437 -0.320000 -0.370563
+        ///v 0.020000 -0.120000 -0.240000
+        ///v 0.020000 -0.320000 -0.240000
+        ///v 0.020000 -0.120000 0.240000
+        ///v 0.020000 -0.320000 0.240000
+        ///v 0.149437 -0.320000 0.370564
+        ///v 0.270564 -0.240000 0.249437
+        ///v 0.270564 -0.040000 0.249437
+        ///v 0.270564 -0.240000 -0.249437
+        ///v 0.270564 -0.040000 -0.249437
+        ///v 0.020000 -0.040000 0. [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string ReactorGaugeBar {
+            get {
+                return ResourceManager.GetString("ReactorGaugeBar", resourceCulture);
             }
         }
         

@@ -14,14 +14,56 @@ namespace FusionBlock
             public bool UseAPIDs = false;
             public int[] APIDs;
             public float ThisCapacity = 3f;
+            public float ThisCharge = 0f;
+            internal float ChargeLeftToAdd = 0f;
 
             MeshRenderer[] renderers;
+            float[] emissionClip;
 
             void OnPool()
             {
-                renderers = GetComponentsInChildren<MeshRenderer>();
                 block.AttachEvent.Subscribe(OnAttach);
                 block.DetachEvent.Subscribe(OnDetach);
+                block.serializeEvent.Subscribe(new Action<bool, TankPreset.BlockSpec>(OnSerialize));
+
+                renderers = GetComponentsInChildren<MeshRenderer>();
+                emissionClip = new float[renderers.Length];
+                for (int i = 0; i < renderers.Length; i++)
+                {
+                    if (renderers[i].gameObject.name[0] == '0' && float.TryParse(renderers[i].gameObject.name, out float offset))
+                        emissionClip[i] = offset / 100f;
+                    else
+                        emissionClip[i] = 0f;
+                }
+            }
+
+            void OnSerialize(bool saving, TankPreset.BlockSpec blockSpec)
+            {
+                if (saving)
+                {
+                    new ModuleReactorHolder.SerialData
+                    {
+                        charge = EnergyNetActive ? NetCharge / NetMaxCharge * ThisCapacity : ThisCharge,
+                        remain = ChargeLeftToAdd
+                    }.Store(blockSpec.saveState);
+                }
+                else
+                {
+                    ModuleReactorHolder.SerialData sd = SerialData<ModuleReactorHolder.SerialData>.Retrieve(blockSpec.saveState);
+                    if (sd != null)
+                    {
+                        ThisCharge = sd.charge;
+                        ChargeLeftToAdd = sd.remain;
+                    }
+                }
+            }
+
+
+            [Serializable]
+            public class SerialData : SerialData<ModuleReactorHolder.SerialData>
+            {
+                public float charge;
+                public float remain;
             }
 
             void OnSpawn()
@@ -29,6 +71,11 @@ namespace FusionBlock
                 Emission = 1f;
                 sharedEnergyNet = null;
                 block.SwapMaterialTime(true);
+            }
+
+            void OnRecycle()
+            {
+                ThisCharge = 0f;
             }
 
             internal virtual float EmissionCalc => Emission * 0.95f + NetCharge / NetMaxCharge * 0.05f;
@@ -42,7 +89,7 @@ namespace FusionBlock
                 }
                 else
                 {
-                    Emission *= 0.95f;
+                    Emission *= 0.95f + ThisCharge / ThisCapacity * 0.05f;
                 }
                 if (Emission > 0.05)
                 {
@@ -64,12 +111,28 @@ namespace FusionBlock
                 sharedEnergyNet.Leave(this);
             }
 
+
+
             void ChangeEmission(Color color)
             {
-                foreach (var renderer in renderers)
+                for (int i = 0; i < renderers.Length; i++)
                 {
-                    if (renderer.gameObject.name == "BlastJet") renderer.material.SetColor("_TintColor", color);
-                    else renderer.material.SetColor("_EmissionColor", color);
+                    var renderer = renderers[i];
+                    Color _color = color;
+
+                    float offset = emissionClip[i];
+                    float bofst = 1f - offset;
+                    if (offset != 0f)
+                    _color = new Color(Mathf.Clamp01((color.r - offset) / bofst), Mathf.Clamp01((color.g - offset) / bofst), Mathf.Clamp01((color.b - offset) / bofst));
+
+                    if (renderer.gameObject.name == "BlastJet")
+                    {
+                        if (EnergyNetActive)
+                            renderer.material.SetColor("_TintColor", _color);
+                        else
+                            renderer.material.SetColor("_TintColor", Color.black);
+                    }
+                    else renderer.material.SetColor("_EmissionColor", _color);
                 }
             }
 
@@ -143,6 +206,7 @@ namespace FusionBlock
                         NetMaxCap -= holder.ThisCapacity;
                         if (NetCharge > NetMaxCap)
                         {
+                            holder.ThisCharge = NetCharge - NetMaxCap;
                             NetCharge = NetMaxCap;
                         }
                         Revalidate();
@@ -153,18 +217,20 @@ namespace FusionBlock
                 {
                     if (holders.Count < 2) return;
                     var First = holders[0];
-                    for (int i = holders.Count - 1; i > 0; i--)
+                    for (int i = holders.Count - 1; i >= 0; i--)
                     {
-                        holders[i].sharedEnergyNet = null;
+                        var holder = holders[i];
+                        holder.sharedEnergyNet = null;
+                        holder.ThisCharge = NetCharge / NetMaxCap * holder.ThisCapacity;
                     }
+                    NetCharge = 0;
+                    NetMaxCap = 0;
+                    Join(First);
                     var old_holders = holders;
-                    float chargeFraction = NetCharge / holders.Count();
-                    NetCharge = chargeFraction;
-                    NetMaxCap = First.ThisCapacity;
                     holders = new List<ModuleReactorHolder>() { First };
                     for (int i = 1; i < old_holders.Count; i++)
                     {
-                        Validate(old_holders[i]).NetCharge += chargeFraction;
+                        Validate(old_holders[i]);
                     }
                 }
 
@@ -187,6 +253,8 @@ namespace FusionBlock
                     {
                         holders.Add(holder);
                         NetMaxCap += holder.ThisCapacity;
+                        NetCharge += holder.ThisCharge;
+                        holder.ThisCharge = 0f;
                         holder.sharedEnergyNet = this;
                     }
                 }
@@ -214,7 +282,6 @@ namespace FusionBlock
             ModuleItemConsume ItemConsumer;
             ModuleItemHolder.Stack Holder, Consumer;
             Visible Generating = null;
-            float ChargeLeftToAdd = 0f;
 
             internal override float EmissionCalc => Emission * 0.9f + (ItemConsumer.IsOperating ? 0.035f : 0f) + ChargeLeftToAdd * 0.065f;
 
@@ -266,7 +333,7 @@ namespace FusionBlock
         {
             ModuleEnergyStore power;
             public float DrainPerSecond = 0.04f;
-            public const float PowerPerUnit = 7500;
+            public const float PowerPerUnit = 10000;
             float m_g = 0f;
 
             internal override float EmissionCalc => Emission * 0.92f + m_g;
