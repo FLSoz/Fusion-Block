@@ -107,6 +107,7 @@ namespace FusionBlock
                     Console.WriteLine($"Commencing the sacred ritual:\n Block forward matching = {a}\n Block upward matching = {b}\n Tank forward matching = {c}\n Tank upward matching = {d}"); //Commence the sacred ritual
 
                     Tank tankA = block.tank, tankB = other.block.tank; // Tank cache. Because they would be lost without it
+                    string tankAName = tankA.name, tankBName = tankB.name;
                     if (Singleton.playerTank == tankB) // If player is tankB it's going to null
                         Singleton.SetPlayerTankInternal(tankA); // Change it to this tank, because this one is the merge host
                     Vector3 cachedMergePos = block.cachedLocalPosition; // Where to put the substitute block
@@ -154,6 +155,7 @@ namespace FusionBlock
                                 retry.RemoveAt(iter); // Move elements down, keep placement
                         }
                     }
+                    if (retry.Count != 0) Console.WriteLine("AttemptMerge(" + tankBName + " to " + tankAName + "): Failed to merge " + retry.Count.ToString() + (retry.Count != 1 ? " blocks!" : " block!"));
 
                     tankA.transform.rotation = hecku; // Ok you can come back now
 
@@ -226,27 +228,53 @@ namespace FusionBlock
             static List<TankBlock> GetSafeBlockStep(TankBlock StartBlock)
             {
                 List<TankBlock> tankBlocks = new List<TankBlock>();
-                RecursiveBlockStep(StartBlock, tankBlocks); // Iterate
+                //RecursiveBlockStep(StartBlock, tankBlocks); // Iterate
+                GetBlocks(StartBlock, ref tankBlocks);
                 return tankBlocks;
             }
 
-            static void RecursiveBlockStep(TankBlock CurrentBlock, List<TankBlock> List)
+            internal static void GetBlocks(TankBlock Start, ref List<TankBlock> GrabbedBlocks) // Borrowed from Control Blocks Overhaul
             {
-                List<TankBlock> tempList = new List<TankBlock>(); // Temporary list for not a very good reason
-                foreach (TankBlock Block in CurrentBlock.ConnectedBlocksByAP)
+                List<TankBlock> buffer = new List<TankBlock>();
+                buffer.Add(Start);
+                int iteration = 0;
+                do
                 {
-                    if (Block == null || List.Contains(Block))
+                    int bC = buffer.Count;
+                    for (int i = 0; i < bC; i++)
                     {
-                        continue; // Skip blocks which do not exist, or already have been added
+                        foreach (TankBlock ConnectedBlock in buffer[i].ConnectedBlocksByAP)
+                        {
+                            if (ConnectedBlock != null && !GrabbedBlocks.Contains(ConnectedBlock))
+                            {
+                                GrabbedBlocks.Add(ConnectedBlock);
+                                buffer.Add(ConnectedBlock); // Add to buffer
+                            }
+                        }
                     }
-                    List.Add(Block);
-                    tempList.Add(Block);
+                    buffer.RemoveRange(0, bC);
+                    iteration++;
                 }
-                foreach (TankBlock Block in tempList)
-                {
-                    RecursiveBlockStep(Block, List); // Continue the process until there are none left
-                }
+                while (buffer.Count != 0);
             }
+
+            //static void RecursiveBlockStep(TankBlock CurrentBlock, List<TankBlock> List)
+            //{
+            //    List<TankBlock> tempList = new List<TankBlock>(); // Temporary list for not a very good reason
+            //    foreach (TankBlock Block in CurrentBlock.ConnectedBlocksByAP)
+            //    {
+            //        if (Block == null || List.Contains(Block))
+            //        {
+            //            continue; // Skip blocks which do not exist, or already have been added
+            //        }
+            //        List.Add(Block);
+            //        tempList.Add(Block);
+            //    }
+            //    foreach (TankBlock Block in tempList)
+            //    {
+            //        RecursiveBlockStep(Block, List); // Continue the process until there are none left
+            //    }
+            //}
         }
     }
 }
