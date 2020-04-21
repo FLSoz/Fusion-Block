@@ -25,6 +25,7 @@ namespace FusionBlock
                 block.AttachEvent.Subscribe(OnAttach);
                 block.DetachEvent.Subscribe(OnDetach);
                 block.serializeEvent.Subscribe(new Action<bool, TankPreset.BlockSpec>(OnSerialize));
+                block.serializeTextEvent.Subscribe(new Action<bool, TankPreset.BlockSpec>(OnSerialize));
 
                 renderers = GetComponentsInChildren<MeshRenderer>();
                 emissionClip = new float[renderers.Length];
@@ -333,7 +334,7 @@ namespace FusionBlock
         {
             ModuleEnergyStore power;
             public float DrainPerSecond = 0.04f;
-            public const float PowerPerUnit = 10000;
+            public const float PowerPerUnit = 12500;
             float m_g = 0f;
 
             internal override float EmissionCalc => Emission * 0.92f + m_g;
