@@ -125,7 +125,7 @@ namespace FusionBlock
             {
                 new BlockPrefabBuilder("HEBlock_111")
                     .SetBlockID(98350)
-                    .SetName("Reactor Passive Blast Block").SetDescription("No lore yet")
+                    .SetName("Reactor Passive Blast Block").SetDescription("A dense heat-resistent block, that can permit the flow of rodius through all APs on it.")
                     .SetMass(3f).SetHP(400).SetGrade(2)
                     .SetSize(IntVector3.one, BlockPrefabBuilder.AttachmentPoints.All)
                     .SetPrice(400)
@@ -140,7 +140,7 @@ namespace FusionBlock
             {
                 new BlockPrefabBuilder("HEBlock_111")
                     .SetBlockID(98356)
-                    .SetName("Reactor Passive Cell Block").SetDescription("No lore yet")
+                    .SetName("Reactor Passive Cell Block").SetDescription("A dense heat-resistent block, which can hold more rodius within it than a passive blast block. Optimal for storage.")
                     .SetMass(6f).SetHP(400).SetGrade(2)
                     .SetSize(new IntVector3(1, 2, 1))
                     .SetAPsManual(new Vector3[] { new Vector3(0, -0.5f, 0f), new Vector3(0, 1.5f, 0f) })
@@ -156,7 +156,7 @@ namespace FusionBlock
             {
                 new BlockPrefabBuilder("HEBlock_111")
                     .SetBlockID(98351)
-                    .SetName("Reactor Blast Block").SetDescription("No lore yet")
+                    .SetName("Reactor Blast Block").SetDescription("A dense heat-resistent block that can widthstand the jets radiated by a reactor ring. Or a flamethrower.")
                     .SetMass(3f).SetHP(550).SetGrade(2)
                     .SetSize(IntVector3.one, BlockPrefabBuilder.AttachmentPoints.All)
                     .SetPrice(400)
@@ -169,7 +169,7 @@ namespace FusionBlock
             {
                 var coolerPrefab = new BlockPrefabBuilder("HEBlock_111")
                     .SetBlockID(98353)
-                    .SetName("Reactor Cooler").SetDescription("No lore yet")
+                    .SetName("Reactor Cooler").SetDescription("It's a spinny!")
                     .SetMass(1f).SetHP(500).SetGrade(2)
                     .SetSize(IntVector3.one, BlockPrefabBuilder.AttachmentPoints.Bottom)
                     .SetPrice(400)
@@ -199,7 +199,7 @@ namespace FusionBlock
                 var mesh = GameObjectJSON.MeshFromData(Properties.Resources.ReactorRingIV);
                 var ringIV = new BlockPrefabBuilder("HE_Battery_211")
                     .SetBlockID(98354)
-                    .SetName("Reactor Ring IV").SetDescription("No lore yet")
+                    .SetName("Reactor Ring IV").SetDescription("This is a rodite generator. It pulls rodite from the connected passive blocks and produces electrical energy. It also lets off jets of heat from the spinning core, which may melt your tech")
                     .SetMass(8f).SetHP(1000).SetGrade(2)
                     .SetSizeManual(new IntVector3[] 
                     { 
@@ -246,6 +246,7 @@ namespace FusionBlock
                 var damage = daage.deathExplosion.GetComponent<Explosion>();
                 damage.m_MaxDamageStrength = 1400;
                 damage.m_EffectRadius = 8;
+                damage.m_EffectRadiusMaxStrength = 6;
                 var particles = daage.deathExplosion.GetComponentsInChildren<ParticleSystem>();
                 foreach (var particle in particles)
                 {
@@ -267,7 +268,7 @@ namespace FusionBlock
                 var mesh = GameObjectJSON.MeshFromData(Properties.Resources.ReactorRingX);
                 var ringX = new BlockPrefabBuilder("HE_Battery_211")
                     .SetBlockID(98355)
-                    .SetName("Reactor Ring X").SetDescription("No lore yet")
+                    .SetName("Reactor Ring X").SetDescription("This is a more powerful rodite generator. It pulls rodite from the connected passive blocks and produces electrical energy. It also lets off jets of heat from the spinning core, which may melt your tech")
                     .SetMass(16f).SetHP(2000).SetGrade(2)
                     .SetSizeManual(new IntVector3[]
                     {
@@ -317,6 +318,7 @@ namespace FusionBlock
                 var damage = daage.deathExplosion.GetComponent<Explosion>();
                 damage.m_MaxDamageStrength = 2500;
                 damage.m_EffectRadius = 12;
+                damage.m_EffectRadiusMaxStrength = 10;
                 var particles = daage.deathExplosion.GetComponentsInChildren<ParticleSystem>();
                 foreach (var particle in particles)
                 {
@@ -338,7 +340,7 @@ namespace FusionBlock
                 var mesh = GameObjectJSON.MeshFromData(Properties.Resources.ReactorLoaderPassive);
                 var loaderPrefab = new BlockPrefabBuilder("GSO_Generator_211")//"BF_PlasmaFurnace_333")
                     .SetBlockID(98352)
-                    .SetName("Reactor Resource Loader").SetDescription("No lore yet")
+                    .SetName("Reactor Resource Loader").SetDescription("This is the rodite loader for any reactor setup on a tech.\n<b>There is only one passive AP on the bottom of this block.</b> Attach this to another passive AP to power ring generators with rodite ore or capsules.")
                     .SetMass(3f).SetHP(400).SetGrade(2)
                     .SetSize(new IntVector3(1, 2, 1))
                     .SetAPsManual(new Vector3[]
