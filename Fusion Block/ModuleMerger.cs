@@ -14,6 +14,9 @@ namespace FusionBlock
             public bool ModelForwardSignificance = false;
             public bool Separator = false;
 
+            const float DelayAfterDetonate = 4f;
+            [NonSerialized]
+            public float Timeout = 0f;
 
             // Substitute block, the result of meging two halves
             public bool MakeSubstitiute = true;
@@ -58,6 +61,11 @@ namespace FusionBlock
                 if (Detonated)
                 {
                     Detonated = false;
+                    return;
+                }
+                if (Timeout > 0f)
+                {
+                    Timeout -= Time.deltaTime;
                     return;
                 }
                 if (block.tank != null) // On Tech
@@ -216,11 +224,16 @@ namespace FusionBlock
                 halfBlockB.SetSkinIndex(block.GetSkinIndex()); // Set that skins so they are pretty
                 halfBlockA.visible.damageable.InitHealth(block.visible.damageable.Health / 2);
                 halfBlockB.visible.damageable.InitHealth(block.visible.damageable.Health / 2); // Set the healths to halves of the whole
+                ModuleFuseHalf fuseBlockA = halfBlockA.GetComponent<ModuleFuseHalf>();
+                if (fuseBlockA != null) fuseBlockA.Timeout = DelayAfterDetonate;
+                ModuleFuseHalf fuseBlockB = halfBlockB.GetComponent<ModuleFuseHalf>();
+                if (fuseBlockB != null) fuseBlockB.Timeout = DelayAfterDetonate;
 
                 block.visible.RemoveFromGame(); // Rid of this
 
                 if (blockA != null && blockA.tank != null)
                     blockA.tank.blockman.AddBlockToTech(halfBlockA, blockA.cachedLocalPosition + cachedBlockAOffset, cachedSplitRot); // Put that block where it belongs
+                
                 if (blockB != null && blockB.tank != null)
                     blockB.tank.blockman.AddBlockToTech(halfBlockB, blockB.cachedLocalPosition + cachedBlockBOffset, new OrthoRotation(cachedSplitRot * Quaternion.Euler(180, 0, 0))); // Put that other block where it belongs
             }
