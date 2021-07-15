@@ -1,4 +1,4 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using Nuterra.BlockInjector;
 using System;
 using System.Reflection;
@@ -27,7 +27,7 @@ namespace FusionBlock
 
         public static void CreateBlocks()
         {
-            HarmonyInstance mod = HarmonyInstance.Create("aceba1.fusionblock");
+            Harmony mod = new Harmony("aceba1.fusionblock");
             mod.PatchAll(System.Reflection.Assembly.GetExecutingAssembly());
 
             Texture2D rtex1 = GameObjectJSON.ImageFromFile(Properties.Resources.reactor_tex_1),
