@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fusion Block", "Fusion Bloc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogManager", "..\..\TerraTechModLoader\LogManager\LogManager.csproj", "{911EED8C-E525-4596-84E7-11BE2A401523}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModuleLoaderMod", "..\..\TerraTechNuterraSteam\ModuleLoaderMod.csproj", "{A2EDC0E0-831E-46F7-A464-8EDB65B40081}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{911EED8C-E525-4596-84E7-11BE2A401523}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{911EED8C-E525-4596-84E7-11BE2A401523}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{911EED8C-E525-4596-84E7-11BE2A401523}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A2EDC0E0-831E-46F7-A464-8EDB65B40081}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A2EDC0E0-831E-46F7-A464-8EDB65B40081}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A2EDC0E0-831E-46F7-A464-8EDB65B40081}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A2EDC0E0-831E-46F7-A464-8EDB65B40081}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

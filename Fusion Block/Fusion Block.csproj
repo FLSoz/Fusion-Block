@@ -76,6 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FusionBlocksMod.cs" />
+    <Compile Include="ModuleLoaders\CustomParser.cs" />
     <Compile Include="ModuleLoaders\JSONModuleFuseHalfLoader.cs" />
     <Compile Include="ModuleFuseHalf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -101,12 +102,6 @@
     <ProjectReference Include="..\..\TerraTechModLoader\LogManager\LogManager.csproj">
       <Project>{911eed8c-e525-4596-84e7-11be2a401523}</Project>
       <Name>LogManager</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\TerraTechNuterraSteam\ModuleLoaderMod.csproj">
-      <Project>{a2edc0e0-831e-46f7-a464-8edb65b40081}</Project>
-      <Name>ModuleLoaderMod</Name>
-      <Private>False</Private>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

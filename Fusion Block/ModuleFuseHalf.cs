@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using LogManager;
+using System.Reflection;
 
 namespace FusionBlock
 {
     public class ModuleFuseHalf : Module
     {
-        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+        internal static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
         internal static void ConfigureLogger(Manager.LogTarget target)
         {
             Manager.RegisterLogger(logger, target);
@@ -257,10 +258,12 @@ namespace FusionBlock
             Singleton.Manager<ManLooseBlocks>.inst.HostDestroyBlock(base.block);
         }
 
+        internal static Quaternion xzFlip = Quaternion.Euler(180, 0, 0);
+
         private void SpawnReplacements()
         {
             TankBlock halfBlockA = ManSpawn.inst.SpawnBlock(SubstituteType, cachedWorldPos, cachedWorldRot); // Create substitute #1
-            TankBlock halfBlockB = ManSpawn.inst.SpawnBlock(SubstituteType, cachedWorldPos, Quaternion.Euler(180, 0, 0) * cachedWorldRot); // Create substitute #2
+            TankBlock halfBlockB = ManSpawn.inst.SpawnBlock(SubstituteType, cachedWorldPos, xzFlip * cachedWorldRot); // Create substitute #2
 
             halfBlockA.SetSkinIndex(block.GetSkinIndex());
             halfBlockB.SetSkinIndex(block.GetSkinIndex()); // Set that skins so they are pretty
@@ -275,7 +278,7 @@ namespace FusionBlock
             {
                 Vector3 localPos = blockA.tank.transform.InverseTransformPoint(cachedWorldPos);
                 blockA.tank.blockman.AddBlockToTech(halfBlockA, new IntVector3(localPos), cachedSplitRot); // Put that block where it belongs
-                logger.Trace($"Spawning block A: {localPos}, {cachedSplitRot}, cached rot {cachedSplitRot}");
+                logger.Trace($"Spawning block A: {localPos}, cached rot {cachedSplitRot}");
                 if (blockB != null && blockA.tank == blockB.tank)
                 {
                     logger.Error("Blocks are ON THE SAME TANK");
@@ -285,10 +288,7 @@ namespace FusionBlock
             if (blockB != null && blockB.tank != null)
             {
                 Vector3 localPos = blockB.tank.transform.InverseTransformPoint(cachedWorldPos);
-
-                IntVector3 down = IntVector3.up;
-                IntVector3 newUp = cachedSplitRot * IntVector3.up;
-                Quaternion rot = Quaternion.FromToRotation(down, -newUp);
+                Quaternion rot = xzFlip * cachedSplitRot;
 
                 // Manually calculate ortho rotation, since it's incorrect
                 Vector3 eulers = rot.eulerAngles;
@@ -297,11 +297,7 @@ namespace FusionBlock
                 OrthoRotation  orthoRot = new OrthoRotation(packed);
 
                 blockB.tank.blockman.AddBlockToTech(halfBlockB, new IntVector3(localPos), orthoRot); // Put that other block where it belongs
-                logger.Trace($"Spawning block B: {localPos}, ortho {orthoRot}, packed {packed}, baseCheck ({baseCheck}), quaternion ({rot.eulerAngles}), cached rot {cachedSplitRot}");
-                if (blockA != null && blockA.tank == blockB.tank)
-                {
-                    logger.Error("Blocks are ON THE SAME TANK");
-                }
+                logger.Trace($"Spawning block B: {localPos}, ortho {orthoRot}, packed {packed}, baseCheck ({baseCheck}), quaternion ({rot}), cached rot {cachedSplitRot}");
             }
         }
 
