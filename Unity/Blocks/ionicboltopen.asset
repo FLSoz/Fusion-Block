@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a54d95abee2c3148b540fda745ffee3, type: 3}
+  m_Name: ionicboltopen
+  m_EditorClassIdentifier: 
+  m_Corporation: BF
+  m_BlockIdentifier: 
+  m_BlockDisplayName: Reusable Fusion Bolt
+  m_BlockDescription: 'Press this up to another of its kind and it will merge the
+    two techs!
+
+    Both techs must be facing the same direction, and the block must be facing eachother.
+    Once that''s done, the halves join together to form one tech, and can be separated'
+  m_Grade: 2
+  m_Rarity: 2
+  m_Price: 624
+  m_Category: 5
+  m_UnlockWithLicense: 1
+  m_PhysicalPrefab: {fileID: 7976186553433978868, guid: 0aa5371f21c626e4bb1f06770a97e05f,
+    type: 3}
+  m_Icon: {fileID: 2800000, guid: d4cc513af49faea48b7a3628bdb1b8d7, type: 3}
+  m_MaxHealth: 200
+  m_Mass: 0.6
+  m_Json: {fileID: 4900000, guid: 49c43875af26cfd4b9179303906a08d6, type: 3}
+  m_DamageableType: 0
+  m_ModuleData: []

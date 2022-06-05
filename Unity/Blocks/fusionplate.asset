@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a54d95abee2c3148b540fda745ffee3, type: 3}
+  m_Name: fusionplate
+  m_EditorClassIdentifier: 
+  m_Corporation: BF
+  m_BlockIdentifier: 
+  m_BlockDisplayName: Fusion Plate
+  m_BlockDescription: '<i>(Vanilla-safe when merged)</i> Press this up to another
+    of its kind and it will merge the two techs!
+
+    Both techs must be facing the same direction, and the block must be facing eachother.
+    Once that''s done, the halves will melt away and the techs will be merged!'
+  m_Grade: 2
+  m_Rarity: 2
+  m_Price: 312
+  m_Category: 5
+  m_UnlockWithLicense: 1
+  m_PhysicalPrefab: {fileID: 7601737359311380387, guid: 9939d9bc7babb2e49b736f07b9964275,
+    type: 3}
+  m_Icon: {fileID: 2800000, guid: 12a76ee80911df7488662e88d01be307, type: 3}
+  m_MaxHealth: 150
+  m_Mass: 0.45
+  m_Json: {fileID: 4900000, guid: 876375df84878ad43af82eb88d580f4b, type: 3}
+  m_DamageableType: 0
+  m_ModuleData: []

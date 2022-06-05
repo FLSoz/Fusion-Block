@@ -1,0 +1,12 @@
+{
+	"Recipe": "luxiancrystal, fibreplating, rubberjelly, rubberjelly",
+	"ModuleFuseHalf": {
+		"ModelForwardSignificance": false,
+		"MakeSubstitute": false,
+		"JoinOffset": [0, -1, 0]
+	},
+	"NuterraBlock": {
+		"ID": 98343,
+		"IconName": "fusionplate.png"
+	}
+}

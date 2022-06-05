@@ -9,9 +9,9 @@ namespace FusionBlock
     public class ModuleFuseHalf : Module
     {
         internal static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
-        internal static void ConfigureLogger(Manager.LogTarget target)
+        internal static void ConfigureLogger(LogTarget target)
         {
-            Manager.RegisterLogger(logger, target);
+            TTLogManager.RegisterLogger(logger, target);
         }
 
         // (1 or -1) Should the front of the block need to be the back for the other? Model specific
@@ -89,11 +89,11 @@ namespace FusionBlock
 
         void OnAttach()
         {
-            block.tank.control.explosiveBoltDetonateEvent.Subscribe(Detonate);
+            block.tank.control.explosiveBoltDetonateEvents[0].Subscribe(Detonate);
         }
         void OnDetach()
         {
-            block.tank.control.explosiveBoltDetonateEvent.Unsubscribe(Detonate);
+            block.tank.control.explosiveBoltDetonateEvents[0].Unsubscribe(Detonate);
         }
 
         public void FixedUpdate()

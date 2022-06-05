@@ -1,0 +1,14 @@
+{
+	"Recipe": "fibronchunk, carbiusbrick, rubberjelly, rubberjelly",
+	"ModuleFuseHalf": {
+		"AddDetachableLink": true,
+		"ModelForwardSignificance": false,
+		"MakeSubstitute": true,
+		"SubstituteID": 622,
+		"JoinOffset": [0, 0, 0]
+	},
+	"NuterraBlock": {
+		"ID": 98342,
+		"IconName": "fusionbolt.png"
+	}
+}

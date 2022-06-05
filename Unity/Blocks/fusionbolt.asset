@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a54d95abee2c3148b540fda745ffee3, type: 3}
+  m_Name: fusionbolt
+  m_EditorClassIdentifier: 
+  m_Corporation: GSO
+  m_BlockIdentifier: 
+  m_BlockDisplayName: Fusion Bolt
+  m_BlockDescription: '<i>(Vanilla-safe when merged)</i> Press this up to another
+    of its kind and it will merge the two techs!
+
+    Both techs must be facing the same direction, and the block must be facing eachother.  Once
+    that''s done, it will fuse into an exploding bolt!
+
+
+    Exploding may still occur while unfused'
+  m_Grade: 4
+  m_Rarity: 2
+  m_Price: 324
+  m_Category: 5
+  m_UnlockWithLicense: 1
+  m_PhysicalPrefab: {fileID: 1229466852670894735, guid: bb24adae3520ffb4eb747aaf6e283144,
+    type: 3}
+  m_Icon: {fileID: 2800000, guid: 5a0afd08d5fd82849a8d9652bfaa9e46, type: 3}
+  m_MaxHealth: 50
+  m_Mass: 0.125
+  m_Json: {fileID: 4900000, guid: bfa0bd6fc77c5714291e7131ac4a2b34, type: 3}
+  m_DamageableType: 0
+  m_ModuleData: []

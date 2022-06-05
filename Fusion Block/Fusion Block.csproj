@@ -102,6 +102,7 @@
     <ProjectReference Include="..\..\TerraTechModLoader\LogManager\LogManager.csproj">
       <Project>{911eed8c-e525-4596-84e7-11be2a401523}</Project>
       <Name>LogManager</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

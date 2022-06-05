@@ -1,0 +1,14 @@
+{
+	"Recipe": "wood, plumbiteore, rubberjelly, rubberjelly",
+	"ModuleFuseHalf": {
+		"ModelForwardPairing": -1,
+		"ModelForwardSignificance": true,
+		"MakeSubstitute": true,
+		"SubstituteID": 3,
+		"JoinOffset": [0, 0, 0]
+	},
+	"NuterraBlock": {
+		"ID": 98341,
+		"IconName": "fusionblock.png"
+	}
+}

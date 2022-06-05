@@ -24,7 +24,7 @@ namespace FusionBlock
         {
             if (!Inited)
             {
-                Manager.LogTarget target = Manager.RegisterLoggingTarget("Fusion Blocks", new Manager.TargetConfig
+                LogTarget target = TTLogManager.RegisterLoggingTarget("Fusion Blocks", new TargetConfig
                 {
                     layout = "${longdate} | ${level:uppercase=true:padding=-5:alignmentOnTruncation=left} | ${logger:shortName=true} | ${message}  ${exception}"
                 });

@@ -1,0 +1,12 @@
+{
+	"Recipe": "luxiancrystal, luxiancrystal, fibreplating, fibreplating, rubberjelly, rubberjelly, rubberjelly, rubberjelly, luxiancrystal, luxiancrystal, fibreplating, fibreplating, rubberjelly, rubberjelly, rubberjelly, rubberjelly",
+	"ModuleFuseHalf": {
+		"AddDetachableLink": true,
+		"Separator": true,
+		"SubstituteID": 98344,
+		"SubstituteName": "Fusion Block:ionicboltopen"
+	},
+	"NuterraBlock": {
+		"ID": 98345
+	}
+}
