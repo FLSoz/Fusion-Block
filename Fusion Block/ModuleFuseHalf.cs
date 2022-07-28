@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-using LogManager;
-using System.Reflection;
 
 namespace FusionBlock
 {
     public class ModuleFuseHalf : Module
     {
-        internal static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
-        internal static void ConfigureLogger(LogTarget target)
+        internal static Logger logger;
+        internal static void ConfigureLogger(Logger.TargetConfig targetConfig)
         {
-            TTLogManager.RegisterLogger(logger, target);
+            logger = new Logger("ModuleFuseHalf", targetConfig);
+            logger.Info("Logger setup");
         }
 
         // (1 or -1) Should the front of the block need to be the back for the other? Model specific

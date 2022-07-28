@@ -47,9 +47,6 @@
       <HintPath>..\..\..\..\Steam\steamapps\common\TerraTech\TerraTechWin64_Data\Managed\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="NLog">
-      <HintPath>..\..\TerraTechModLoader\ModManager\bin\Debug\NLog.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -76,6 +73,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FusionBlocksMod.cs" />
+    <Compile Include="Logger.cs" />
     <Compile Include="ModuleLoaders\CustomParser.cs" />
     <Compile Include="ModuleLoaders\JSONModuleFuseHalfLoader.cs" />
     <Compile Include="ModuleFuseHalf.cs" />
@@ -97,13 +95,6 @@
     <None Include="mod.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\TerraTechModLoader\LogManager\LogManager.csproj">
-      <Project>{911eed8c-e525-4596-84e7-11be2a401523}</Project>
-      <Name>LogManager</Name>
-      <Private>False</Private>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
@@ -132,19 +123,9 @@ set e=$(TargetDir)..\&gt;nul
 
 echo Copying to game
 xcopy /S /Y /R "$(TargetFileName)" !modpath!
-if not "$(TargetFileName)" == "LogManager.dll" (
-  xcopy /S /Y /R "LogManager.dll" !modpath!
-)
 
 echo Copying to Unity
-xcopy /S /Y /R "$(TargetFileName)" !unitypath!
-if not "$(TargetFileName)" == "LogManager.dll" (
-  xcopy /S /Y /R "LogManager.dll" !unitypath!
-)
-
-if not "$(TargetFileName)" == "LogManager.dll" (
-  del "LogManager.dll"
-)</PostBuildEvent>
+xcopy /S /Y /R "$(TargetFileName)" !unitypath!</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>

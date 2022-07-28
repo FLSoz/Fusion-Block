@@ -1,24 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
-using LogManager;
 
 namespace FusionBlock.ModuleLoaders
 {
     public class JSONModuleFuseHalfLoader : JSONModuleLoader
     {
-        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
-        internal static void ConfigureLogger(LogTarget target)
+        internal static Logger logger;
+        internal static void ConfigureLogger(Logger.TargetConfig targetConfig)
         {
-            TTLogManager.RegisterLogger(logger, target);
+            logger = new Logger("ModuleFuseHalfLoader", targetConfig);
+            logger.Info("Logger setup");
         }
 
         public override bool CreateModuleForBlock(int blockID, ModdedBlockDefinition def, TankBlock block, JToken data)
         {
-            logger.Trace(data);
+            logger.Trace(data.ToString());
             if (data.Type == JTokenType.Object)
             {
                 JObject obj = (JObject)data;

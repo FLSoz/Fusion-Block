@@ -1,11 +1,5 @@
 ﻿using HarmonyLib;
-using System;
-using System.Reflection;
-using UnityEngine;
-using System.Collections.Generic;
 using FusionBlock.ModuleLoaders;
-using NLog;
-using LogManager;
 
 namespace FusionBlock
 {
@@ -24,12 +18,13 @@ namespace FusionBlock
         {
             if (!Inited)
             {
-                LogTarget target = TTLogManager.RegisterLoggingTarget("Fusion Blocks", new TargetConfig
-                {
+                Logger.TargetConfig targetConfig = new Logger.TargetConfig() {
+                    filename = "FusionBlocks",
                     layout = "${longdate} | ${level:uppercase=true:padding=-5:alignmentOnTruncation=left} | ${logger:shortName=true} | ${message}  ${exception}"
-                });
-                JSONModuleFuseHalfLoader.ConfigureLogger(target);
-                ModuleFuseHalf.ConfigureLogger(target);
+                };
+
+                JSONModuleFuseHalfLoader.ConfigureLogger(targetConfig);
+                ModuleFuseHalf.ConfigureLogger(targetConfig);
                 Inited = true;
             }
         }
