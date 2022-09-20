@@ -23,8 +23,8 @@ namespace FusionBlock
                     layout = "${longdate} | ${level:uppercase=true:padding=-5:alignmentOnTruncation=left} | ${logger:shortName=true} | ${message}  ${exception}"
                 };
 
-                JSONModuleFuseHalfLoader.ConfigureLogger(targetConfig);
                 ModuleFuseHalf.ConfigureLogger(targetConfig);
+                JSONModuleFuseHalfLoader.ConfigureLogger(targetConfig);
                 Inited = true;
             }
         }
