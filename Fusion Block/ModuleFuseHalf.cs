@@ -39,7 +39,7 @@ namespace FusionBlock
             if (Separator)
             {
                 block.AttachedEvent.Subscribe(OnAttach);
-                block.DetachedEvent.Subscribe(OnDetach);
+                block.DetachingEvent.Subscribe(OnDetach);
 
                 this.bolt = base.GetComponent<ModuleDetachableLink>();
             }
