@@ -254,7 +254,7 @@ namespace FusionBlock
             {
                 block.damage.Explode(false); // Explode this
             }
-            Singleton.Manager<ManLooseBlocks>.inst.HostDestroyBlock(base.block);
+            Singleton.Manager<ManLooseBlocks>.inst.HostDestroyBlock(base.block, true);
         }
 
         internal static Quaternion xzFlip = Quaternion.Euler(180, 0, 0);
